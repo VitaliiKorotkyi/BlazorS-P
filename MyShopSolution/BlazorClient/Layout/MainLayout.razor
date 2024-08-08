@@ -1,0 +1,95 @@
+﻿
+@inherits LayoutComponentBase
+@using BlazorClient.Provider
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.Security.Claims
+@inject NavigationManager Navigation
+@inject CustomAuthStateProvider AuthStateProvider
+
+<PageTitle>MyShop</PageTitle>
+
+<header class="bg-dark text-bg-dark">
+    <nav class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="/" class="navbar-brand d-flex align-items-center">
+                <img src="icon/online-shop.png" alt="Arrow" style="width:25px; height:25px;" />
+                <strong>MyShop</strong>
+            </a>
+            <div class="search-bar">
+                <label for="search" class="sr-only">Search</label>
+                <input type="text" id="search" placeholder="Search..." class="form-control" />
+            </div>
+            <div class="auth-icons">
+                @if (authenticationState == null)
+                {
+                    <p>Loading authentication state...</p>
+                }
+                else if (authenticationState.User.Identity.IsAuthenticated)
+                {
+                    <button @onclick="HandleLogout" class="btn btn-link text-white">Logout</button>
+                    <a href="/admin/add-product" class="btn btn-link text-white">Add product</a>
+                }
+                else
+                {
+                    <a href="/register" class="btn btn-link text-white">Register</a>
+                    <a href="/login" class="btn btn-link text-white">Login</a>
+                }
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="page d-flex">
+    <aside class="sidebar">
+        <NavMenu />
+    </aside>
+
+    <main class="main-content flex-grow-1">
+        @Body
+    </main>
+</div>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? authenticationStateTask { get; set; }
+
+    private AuthenticationState? authenticationState;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (authenticationStateTask != null)
+        {
+            authenticationState = await authenticationStateTask;
+            AuthStateProvider.AuthenticationStateChanged += OnAuthenticationStateChanged;
+        }
+        else
+        {
+            Console.Error.WriteLine("Authentication state task is null.");
+        }
+    }
+
+    private async void OnAuthenticationStateChanged(Task<AuthenticationState> task)
+    {
+        authenticationState = await task;
+        StateHasChanged();
+    }
+
+    private async Task HandleLogout()
+    {
+        try
+        {
+            await AuthStateProvider.SetTokenAsync(null!);
+            Navigation.NavigateTo("/", true);
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"Error during logout: {ex.Message}");
+        }
+    }
+
+    private string GetUserRole()
+    {
+        var roleClaim = authenticationState?.User?.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
+        return roleClaim != null ? roleClaim.Value : "Unknown";
+    }
+}

@@ -1,0 +1,35 @@
+﻿@page "/product/{ProductId:guid}"
+@using System.Globalization
+@inherits ViewProductInfoBase
+
+<h3>Product Information</h3>
+
+@if (product == null)
+{
+    <p>Loading product information...</p>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="@product.ImageUrl" alt="Product Image" class="img-fluid" />
+            </div>
+            <div class="col-md-6">
+                <h4>@product.Name</h4>
+                <p>@product.Description</p>
+                <p>Price: @product.Price.ToString("C", CultureInfo.CreateSpecificCulture("cs-CZ"))</p>
+                <p>Quantity: @product.Quantity kus</p>
+                <p>Category: @product.Category.CategoryName</p>
+                <button class="btn btn-primary" @onclick="GoBack">Back</button>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private void GoBack()
+    {
+        Navigation.NavigateTo("/products");
+    }
+}

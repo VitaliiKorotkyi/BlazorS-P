@@ -1,0 +1,59 @@
+﻿
+
+@page "/admin/add-product"
+@inherits AddProductBase
+
+<h3 class="text-center">Add New Product</h3>
+
+@if (Categories == null || !Categories.Any())
+{
+    <p>Loading categories...</p>
+}
+else
+{
+    <EditForm Model="@Product" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="d-flex justify-content-center">
+            <div style="width: 450px;">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <InputText id="name" class="form-control" @bind-Value="Product.Name" />
+                    <ValidationMessage For="@(() => Product.Name)" />
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description:</label>
+                    <InputTextArea id="description" class="form-control" @bind-Value="Product.Description" />
+                    <ValidationMessage For="@(() => Product.Description)" />
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price:</label>
+                    <InputNumber id="price" class="form-control" @bind-Value="Product.Price" />
+                    <ValidationMessage For="@(() => Product.Price)" />
+                </div>
+                <div class="mb-3">
+                    <label for="imageUrl" class="form-label">Image URL:</label>
+                    <InputText id="imageUrl" class="form-control" @bind-Value="Product.ImageUrl" />
+                    <ValidationMessage For="@(() => Product.ImageUrl)" />
+                </div>
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">Quantity:</label>
+                    <InputNumber id="quantity" class="form-control" @bind-Value="Product.Quantity" />
+                    <ValidationMessage For="@(() => Product.Quantity)" />
+                </div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category:</label>
+                    <InputSelect id="category" class="form-control" @bind-Value="Product.CategoryId">
+                        <option value="">Select a category</option>
+                        @foreach (var category in Categories)
+                        {
+                            <option value="@category.CategoryId">@category.CategoryName</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="@(() => Product.CategoryId)" />
+                </div>
+                <button type="submit" class="btn btn-primary">Add Product</button>
+            </div>
+        </div>
+    </EditForm>
+}

@@ -1,0 +1,73 @@
+﻿@page "/computers-peripherals"
+@using System.Globalization
+@inherits ComputersPeripheralsBase
+
+<h3>Computers And Peripherals </h3>
+<div>
+    @if (isLoading)
+    {
+        <p>Loading products...</p>
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    }
+    else if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <p class="text-danger">Error loading products: @errorMessage</p>
+    }
+    else if (products != null && products.Any())
+    {
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                @foreach (var product in products.Skip((currentPage - 1) * pageSize).Take(pageSize))
+                {
+                    <div class="col">
+                        <div class="card shadow-sm h-100">
+                            <img class="bd-placeholder-img card-img-top" src="@product.ImageUrl" alt="Product Image" />
+                            <div class="card-body d-flex flex-column">
+                                <p class="card-text">@product.Name</p>
+                                <hr />
+                                <p class="card-text description">@TruncateDescription(product.Description)</p>
+                                <hr />
+                                <p class="card-text mt-auto">@product.Quantity kus</p>
+                                <hr />
+                                <p class="card-text">@product.Category.CategoryName</p>
+                                <hr />
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" @onclick="() => NavigateToProduct(product.ProductId)">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" @onclick="() => NavigateToEditProduct(product.ProductId)">Edit</button>
+                                    </div>
+                                    <small class="text-body-secondary">@product.Price.ToString("C", CultureInfo.CreateSpecificCulture("cs-CZ"))</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="pagination mt-3 d-flex justify-content-center">
+            <button class="btn btn-primary" @onclick="PreviousPage" disabled="@IsPreviousDisabled">
+                <img src="icon/arrow_chevron_left.ico" alt="Arrow" style="width:25px; height:25px;" />
+            </button>
+            <button class="btn btn-primary" @onclick="NextPage" disabled="@IsNextDisabled">
+                <img src="icon/arrow_right.ico" alt="Arrow" style="width:25px; height:25px;" />
+            </button>
+        </div>
+    }
+    else
+    {
+        <p>No products available.</p>
+    }
+</div>
+@inject NavigationManager Navigation
+@code {
+    private void NavigateToProduct(Guid productId)
+    {
+        Navigation.NavigateTo($"/product/{productId}");
+    }
+    private void NavigateToEditProduct(Guid productId)
+    {
+        Navigation.NavigateTo($"/editviewproduct/{productId}");
+    }
+}

@@ -1,0 +1,37 @@
+﻿@page "/register"
+@inherits RegisterBase
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title">Register</h3>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="@RegisterModel" OnValidSubmit="HandleRegister">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary class="text-danger" />
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name:</label>
+                            <InputText id="firstName" class="form-control" @bind-Value="RegisterModel.FirstName" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name:</label>
+                            <InputText id="lastName" class="form-control" @bind-Value="RegisterModel.LastName" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <InputText id="email" class="form-control" @bind-Value="RegisterModel.Email" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password:</label>
+                            <InputText id="password" class="form-control" @bind-Value="RegisterModel.Password" type="password" />
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

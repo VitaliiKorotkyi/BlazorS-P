@@ -1,0 +1,104 @@
+﻿@using Core.Interface
+@using Core.Models
+@* @using Core.Interface
+@using Core.Models
+@inject IProductService ProductService
+
+<div class="sidebar">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        @foreach (var category in categories)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="@GetCategoryLink(category.CategoryName)">
+                    <span class="oi oi-list" aria-hidden="true"></span> <u>@category.CategoryName</u>
+                    <img src="icon/arrow_right.ico" alt="Arrow" style="width:25px; height:25px;" />
+                </NavLink>
+            </div>
+        }
+    </nav>
+</div>
+
+@code {
+    private List<Category> categories = new List<Category>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        categories = (await ProductService.GetCategoriesAsync()).ToList();
+    }
+
+    private string GetCategoryLink(string categoryName)
+    {
+        return categoryName switch
+        {
+            "HomeAppliances" => "/home-appliances",
+            "KitchenAppliances" => "/kitchen-appliances",
+            "BeautyAndHealth" => "/beauty-and-health",
+            "ClimateTechnology" => "/climate-technology",
+            "SmartphonesAndAccessories" => "/smartphones-and-accessories",
+            "SmartWatchesAndTrackers" => "/smart-watches-and-trackers",
+            "LaptopsAndTablets" => "/laptops-and-tablets",
+            "ComputersAndPeripherals" => "/computers-and-peripherals",
+            "GamingAndLeisure" => "/gaming-and-leisure",
+            "Audio" => "/audio",
+            "TvProjectorsAndVideo" => "/tv-projectors-and-video",
+            "DiscountedProducts" => "/discounted-products",
+            _ => "/"
+        };
+    }
+}
+ *@
+
+            @inject IProductService ProductService
+
+<div class="sidebar">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        @foreach (var category in categories)
+        {
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="@GetCategoryLink(category.CategoryName)">
+                    <span class="oi oi-list" aria-hidden="true"></span> <u>@category.CategoryName</u>
+                    <img src="icon/arrow_right.ico" alt="Arrow" style="width:25px; height:25px;" />
+                </NavLink>
+            </div>
+        }
+    </nav>
+</div>
+
+@code {
+    private List<Category> categories = new List<Category>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        categories = (await ProductService.GetCategoriesAsync()).ToList();
+    }
+
+    private string GetCategoryLink(string categoryName)
+    {
+        return categoryName switch
+        {
+            "HomeAppliances" => "/home-appliances",
+            "KitchenAppliances" => "/kitchen-appliances",
+            "BeautyAndHealth" => "/beauty-health",
+            "ClimateTechnology" => "/climate-technology",
+            "Smartphones" => "/smartphones-accessories",
+            "SmartWatchesAndTrackers" => "/smart-watches-trackers",
+            "LaptopsAndTablets" => "/laptops-tablets",
+            "ComputersAndPeripherals" => "/computers-peripherals",
+            "GamingAndLeisure" => "/gaming-leisure",
+            "Audio" => "/audio",
+            "TvProjectorsAndVideo" => "/tv-projectors-video",
+            "DiscountedProducts" => "/discounted-products",
+            _ => "/"
+        };
+    }
+}

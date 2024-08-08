@@ -1,0 +1,115 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = BlazorClient
+build_property.RootNamespace = BlazorClient
+build_property.ProjectDir = C:\Users\vital\source\repos\MyShopSolution\BlazorClient\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\vital\source\repos\MyShopSolution\BlazorClient
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/AddProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/Audio.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXVkaW8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/BeautyHealth.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmVhdXR5SGVhbHRoLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/ClimateTechnology.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpbWF0ZVRlY2hub2xvZ3kucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/ComputersPeripherals.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcHV0ZXJzUGVyaXBoZXJhbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/Dashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/DiscountedProducts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzY291bnRlZFByb2R1Y3RzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/GamingLeisure.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2FtaW5nTGVpc3VyZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/HomeAppliances.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZUFwcGxpYW5jZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/KitchenAppliances.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcS2l0Y2hlbkFwcGxpYW5jZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/LaptopsTablets.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGFwdG9wc1RhYmxldHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/ProductsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/SmartphonesAccessories.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU21hcnRwaG9uZXNBY2Nlc3Nvcmllcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/SmartWatchesTrackers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU21hcnRXYXRjaGVzVHJhY2tlcnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/TvProjectorsVideo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHZQcm9qZWN0b3JzVmlkZW8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Pages/ViewProductInfo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld1Byb2R1Y3RJbmZvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-aa2zzlyc8p
+
+[C:/Users/vital/source/repos/MyShopSolution/BlazorClient/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-p3l1yp9o1y

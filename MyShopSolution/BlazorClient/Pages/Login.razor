@@ -1,0 +1,26 @@
+﻿@page "/login"
+@inherits LoginBase
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary class="text-danger" />
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <InputText id="email" name="email" class="form-control" @bind-Value="loginModel.Email" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password:</label>
+                            <InputText id="password" name="password" class="form-control" @bind-Value="loginModel.Password" type="password" />
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

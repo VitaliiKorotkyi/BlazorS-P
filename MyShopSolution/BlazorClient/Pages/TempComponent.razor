@@ -1,0 +1,27 @@
+﻿@page "/tempviewproduct/{ProductId:guid}"
+@inherits EditViewProductBase
+@inject NavigationManager Navigation
+
+<h3>Temporary View Product</h3>
+
+@if (product == null)
+{
+    <p>Loading product...</p>
+}
+else
+{
+    <div>
+        <h4>@product.Name</h4>
+        <p>@product.Description</p>
+        <p>Price: @product.Price</p>
+        <p>Quantity: @product.Quantity</p>
+        <p>Category: @product.Category.CategoryName</p>
+    </div>
+}
+
+@code {
+    private void GoBack()
+    {
+        Navigation.NavigateTo("/products");
+    }
+}
